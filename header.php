@@ -29,7 +29,7 @@
                 $dro_web_trader_sticky_header_status = dro_web_trader_get_option('dro_web_trader_sticky_header_status');
                 $sticky_header = ($dro_web_trader_sticky_header_status) ? "sticky-active" : "";
                 ?>
-                <nav id="site-navigation" class="main-navigation <?php echo $sticky_header?>">
+                <nav id="site-navigation" class="main-navigation <?php echo $sticky_header ?>">
                     <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
                     <?php
                     /**
@@ -42,11 +42,19 @@
                         ));
                     }
                     /**
-                     * Social Menu: optional to display
+                     * Optional Social Menu
                      */
                     dro_web_trader_social_menu();
+
+                    /**
+                     * Optional Search For
+                     */
+                    $dro_web_trader_search_form_status = dro_web_trader_get_option('dro_web_trader_search_form_status');
+
+                    ($dro_web_trader_search_form_status) ? dro_web_trader_search_form() : '';
                     ?>
                 </nav><!-- #site-navigation -->
+
 
                 <?php if (get_header_image() && ( 'blank' == get_header_textcolor())) : ?>
 

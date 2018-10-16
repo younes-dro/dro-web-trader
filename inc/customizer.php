@@ -30,7 +30,10 @@ function dro_web_trader_customize_register($wp_customize) {
     $default = dro_web_trader_default_theme_options();
 
     //theme option panel
-    $wp_customize->add_panel('theme_option_panel', array('title' => esc_html__('Theme Options', 'dro-web-trader'), 'priority' => 200, 'capability' => 'edit_theme_options'));
+    $wp_customize->add_panel('theme_option_panel', array('title' => esc_html__('Theme Options', 'dro-web-trader'),
+        'priority' => 200,
+        'capability' => 'edit_theme_options'
+    ));
 
     // header section
     $wp_customize->add_section('dro_web_trader_header_section', array('title' => esc_html__('Header Option', 'dro-web-trader'),
@@ -39,7 +42,9 @@ function dro_web_trader_customize_register($wp_customize) {
         'panel' => 'theme_option_panel'
             )
     );
-
+/**
+ * Sticky Header option
+ */
     // sticky header setting.
     $wp_customize->add_setting('dro_web_trader_sticky_header_status', array(
         'default' => $default['dro_web_trader_sticky_header_status'],
@@ -55,6 +60,26 @@ function dro_web_trader_customize_register($wp_customize) {
         'priority' => 100
             )
     );
+    
+/**
+ * Search Form option  
+ */
+    // search form setting.
+    $wp_customize->add_setting('dro_web_trader_search_form_status', array(
+        'default' => $default['dro_web_trader_sticky_header_status'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'dro_web_trader_sanitize_checkbox',
+            )
+    );
+    // search form control
+    $wp_customize->add_control('dro_web_trader_search_form_status', array(
+        'label' => esc_html__('Enable Search Form on the header', 'dro-web-trader'),
+        'section' => 'dro_web_trader_header_section',
+        'type' => 'checkbox',
+        'priority' => 100
+            )
+    );    
+    
 }
 
 add_action('customize_register', 'dro_web_trader_customize_register');
@@ -105,6 +130,7 @@ if (!function_exists('dro_web_trader_default_theme_options')):
 
         $defaults = array();
         $defaults['dro_web_trader_sticky_header_status'] = false;
+        $defaults['dro_web_trader_search_form_status'] = false;
 
         return $defaults;
     }
@@ -140,13 +166,6 @@ if (!function_exists('dro_web_trader_get_option')) :
 
         return $value;
     }
-
-
-
-
-
-
-
 
 
 endif;

@@ -140,11 +140,11 @@ if (!function_exists('dro_web_trader_post_thumbnail')) :
 
 endif;
 
+/**
+ * Optional Social Menu
+ */
 if (!function_exists('dro_web_trader_social_menu')):
 
-    /**
-     * Optional Social Menu
-     */
     function dro_web_trader_social_menu() {
         if (has_nav_menu('social')) {
             wp_nav_menu(
@@ -164,6 +164,25 @@ if (!function_exists('dro_web_trader_social_menu')):
         }
     }
 
+endif;
 
+/**
+ * Search Form
+ */
+if (!function_exists('dro_web_trader_search_from')):
+
+    function dro_web_trader_search_form() {
+        ?>
+        <div class="search-toggle">
+            <i class="fa fa-search"></i>
+            <a href="#search-container" class="screen-reader-text"><?php _e('Search', 'dro-web-trader'); ?></a>
+        </div>
+        <div id="search-container" class="search-box-wrapper">
+            <div class="search-box">
+                <?php get_search_form() ?>
+            </div>
+        </div>
+        <?php
+    }
 
 endif;

@@ -34,6 +34,20 @@
 
         });
     }
+
+    /* Top Search Form */
+    $(".search-toggle").click(function () {
+        var toggle = $('#site-navigation').hasClass('toggled');
+        if(toggle === true){
+            $('#site-navigation').removeClass('toggled');
+        }
+        $("#search-container").slideToggle('fast', function () {
+            $('.search-toggle').toggleClass('active');
+        });
+        // Optional return false to avoid the page "jumping" when clicked
+        return false;
+    });
+
 })(jQuery);
 
 
