@@ -11,6 +11,11 @@
 
 ?>
 
+<?php
+    
+$dro_web_tradr_scroll_up_status = dro_web_trader_get_option('dro_web_trader_scroll_top_status');
+?>
+
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
@@ -30,6 +35,17 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php
+/**
+ * If Scroll To Top is activated
+ */
+if($dro_web_tradr_scroll_up_status):
+    ?>
+<a href="#" class="scrollup"></a>
+<?php
+endif;
+
+?>
 <?php wp_footer(); ?>
 
 </body>

@@ -38,7 +38,7 @@
     /* Top Search Form */
     $(".search-toggle").click(function () {
         var toggle = $('#site-navigation').hasClass('toggled');
-        if(toggle === true){
+        if (toggle === true) {
             $('#site-navigation').removeClass('toggled');
         }
         $("#search-container").slideToggle('fast', function () {
@@ -47,6 +47,20 @@
         // Optional return false to avoid the page "jumping" when clicked
         return false;
     });
+
+    /* Scroll to the top*/
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({scrollTop: 0}, 600);
+        return false;
+    })
 
 })(jQuery);
 
