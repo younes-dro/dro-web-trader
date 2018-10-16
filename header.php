@@ -24,8 +24,12 @@
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'dro-web-trader'); ?></a>
 
             <header id="masthead" class="site-header">
-
-                <nav id="site-navigation" class="main-navigation">
+                <?php
+                // check if sticky menu is activated
+                $dro_web_trader_sticky_header_status = dro_web_trader_get_option('dro_web_trader_sticky_header_status');
+                $sticky_header = ($dro_web_trader_sticky_header_status) ? "sticky-active" : "";
+                ?>
+                <nav id="site-navigation" class="main-navigation <?php echo $sticky_header?>">
                     <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
                     <?php
                     /**
