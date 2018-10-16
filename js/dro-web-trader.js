@@ -19,6 +19,19 @@
             $(parent).find('.mks-dropdown-toggle').removeClass('fa-minus');
         }
     });
+
+    /* Stick navigation to the top of the page */
+    var stickyNavTop = $('.main-navigation').offset().top;
+    $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+
+        if (scrollTop > stickyNavTop) {
+            $('.main-navigation').addClass('sticky-header');
+        } else {
+            $('.main-navigation').removeClass('sticky-header');
+        }
+
+    });
 })(jQuery);
 
 

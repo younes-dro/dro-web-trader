@@ -25,6 +25,25 @@
 
             <header id="masthead" class="site-header">
 
+                <nav id="site-navigation" class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
+                    <?php
+                    /**
+                     * Main Menu 
+                     */
+                    if (has_nav_menu('menu-1')) {
+                        wp_nav_menu(array(
+                            'theme_location' => 'menu-1',
+                            'menu_id' => 'primary-menu',
+                        ));
+                    }
+                    /**
+                     * Social Menu: optional to display
+                     */
+                    dro_web_trader_social_menu();
+                    ?>
+                </nav><!-- #site-navigation -->
+
                 <?php if (get_header_image() && ( 'blank' == get_header_textcolor())) : ?>
 
                     <div class="header-image">
@@ -64,24 +83,7 @@
                 </div><!-- .title-box -->
         </div><!-- .site-branding -->
 
-        <nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
-            <?php
-            /**
-             * Main Menu 
-             */
-            if (has_nav_menu('menu-1')) {
-                wp_nav_menu(array(
-                    'theme_location' => 'menu-1',
-                    'menu_id' => 'primary-menu',
-                ));
-            }
-            /**
-             * Social Menu: optional to display
-             */
-            dro_web_trader_social_menu();
-            ?>
-        </nav><!-- #site-navigation -->
+
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
