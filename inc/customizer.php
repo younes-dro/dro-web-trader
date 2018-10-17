@@ -69,7 +69,7 @@ function dro_web_trader_customize_register($wp_customize) {
             )
     );
     $wp_customize->add_control('dro_web_trader_search_form_status', array(
-        'label' => esc_html__('Enable Search Form on the header', 'dro-web-trader'),
+        'label' => esc_html__('Enable Search Form On The Header', 'dro-web-trader'),
         'section' => 'dro_web_trader_header_section',
         'type' => 'checkbox',
         'priority' => 100
@@ -143,6 +143,7 @@ if (!function_exists('dro_web_trader_default_theme_options')):
         $defaults = array();
         $defaults['dro_web_trader_sticky_header_status'] = false;
         $defaults['dro_web_trader_search_form_status'] = false;
+        $defaults['dro_web_trader_scroll_top_status'] = false;
 
         return $defaults;
     }
@@ -178,6 +179,8 @@ if (!function_exists('dro_web_trader_get_option')) :
 
         return $value;
     }
+
+
 
 
 endif;
