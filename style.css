@@ -1285,6 +1285,16 @@ input[type="search"] {
 .widget  .search-submit{
     display: none;
 }
+/* Footer widgets responsive */
+@media screen and (max-width: 879px) {
+    #footer-widgets { width: 100%!important; }
+    
+    .footer-widgets .widget {
+        float: none;
+        width: 100%;
+        margin: 0 0 8rem;
+    }
+}
 
 /*--------------------------------------------------------------
 # Content

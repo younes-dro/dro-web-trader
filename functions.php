@@ -146,6 +146,7 @@ function dro_web_trader_scripts() {
 
     wp_enqueue_script('dro-web-trader-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('dro-web-trader-superfish'), '20181014', true);
 
+    wp_enqueue_script('dro-web-trader-masonry-settings', get_template_directory_uri() . '/js/masonry-settings.js', array('masonry'), '20181017', true);
 
     wp_enqueue_script('dro-web-trader-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 
