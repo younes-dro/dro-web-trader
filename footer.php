@@ -19,6 +19,7 @@ $dro_web_tradr_scroll_up_status = dro_web_trader_get_option('dro_web_trader_scro
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+            <?php get_sidebar('footer');?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dro-web-trader' ) ); ?>">
 				<?php
@@ -41,7 +42,7 @@ $dro_web_tradr_scroll_up_status = dro_web_trader_get_option('dro_web_trader_scro
  */
 if($dro_web_tradr_scroll_up_status):
     ?>
-<a href="#" class="scrollup"></a>
+<a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
 <?php
 endif;
 

@@ -116,6 +116,15 @@ function dro_web_trader_widgets_init() {
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
+    register_sidebar(array(
+        'name' => esc_html__('Footer Widgets', 'dro-web-trader'),
+        'id' => 'sidebar-2',
+        'description' => esc_html__('Footer widgets area appears in the footer of site.', 'dro-web-trader'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 }
 
 add_action('widgets_init', 'dro_web_trader_widgets_init');
@@ -133,14 +142,14 @@ function dro_web_trader_scripts() {
 
     wp_enqueue_style('dro-web-trader-fontawesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
 
-    wp_enqueue_script( 'dro-web-trader-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20181014', true );
-    
-    wp_enqueue_script( 'dro-web-trader-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('dro-web-trader-superfish'), '20181014', true );
+    wp_enqueue_script('dro-web-trader-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20181014', true);
 
-    
+    wp_enqueue_script('dro-web-trader-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('dro-web-trader-superfish'), '20181014', true);
+
+
     wp_enqueue_script('dro-web-trader-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 
-    wp_enqueue_script( 'dro-web-trader-js', get_template_directory_uri() . '/js/dro-web-trader.js', array('dro-web-trader-navigation'), '20181014', true );
+    wp_enqueue_script('dro-web-trader-js', get_template_directory_uri() . '/js/dro-web-trader.js', array('dro-web-trader-navigation'), '20181014', true);
     wp_enqueue_script('dro-web-trader-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {

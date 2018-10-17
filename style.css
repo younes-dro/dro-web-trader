@@ -40,6 +40,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
         ## Captions
         ## Galleries
+#Footer
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -535,15 +536,20 @@ table {
     width: 100%;
 }
 
-.scrollup{
+.scrollup,
+.scrollup:hover{
     position: fixed;
     width: 40px;
     height: 40px;
     bottom: 2rem;
-    right: 2rem;
+    right: 1rem;
     background-color: #000;
     opacity: .5;
     display: none;
+    border-radius: 100px;
+    text-align: center;
+    padding: 8px 0 0 0;
+    color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -678,6 +684,7 @@ a:hover, a:active {
     background-color: #333;
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
     animation:slide-down 0.7s;
+    z-index: 9999;
 }
 @keyframes slide-down {
     0% {
@@ -1187,12 +1194,96 @@ input[type="search"] {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-    margin: 0 0 1.5em;
-    /* Make sure select elements fit in widgets. */
+    margin: 0 0 4em;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+.widget-title{
+    margin-bottom: 1em;
+    font-size: 24px;
+    border-bottom: 1px solid #000;
+}
+.widget a{
+    font-weight: 700;
+    color: #000;
+}
+.widget ul,
+.widget ol{
+    padding: 0;
+    margin: -1em 0 0;
+    list-style-type: none
+}
+.widget li{ 
+    padding: 1em 0 0 0
+}
+.widget li ul,
+.widget li ol{
+    padding-top: 0;
+}
+.widget li li{ margin-left: 1.5em}
+
+.widget_recent_entries li:before,
+.widget_recent_comments li:before,
+.widget_archive li:before {
+    display: block;
+    float: left;
+    padding-top: 2px;
+    margin-left: -1.5em;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 14px;
+    font-weight: 900;
+} 
+
+.widget_recent_entries li,
+.widget_recent_comments li { margin: 0 0 .5em 2.5em; }
+
+.widget_recent_entries li:before { content: "\f036"; }
+
+.widget_recent_comments li:before { content: "\f075"; }
+
+.widget_archive li { margin: 0 0 0 2.5em; }
+
+.widget_archive li:before { content: "\f187"; }
+
+.widget_nav_menu a,
+.widget_pages a {
+    display: block;
+    padding: 1em 0;
+    border-bottom: solid 1px hsl(0, 0%, 90%);
+}
+
+.widget_nav_menu li,
+.widget_pages li { padding-top: 0; }
+
+.widget_rss li { margin-bottom: .5em; }
+
+.widget_rss .rss-date,
+.widget_rss cite {
+    display: block;
+    font-size: 85%;
+}
+
+.footer-widgets { margin: 0 auto; }
+
+.footer-widgets .widget-title,
+.footer-widgets .widget a:hover {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    border-color: #fff;
+    border-color: hsl(0, 0%, 100%);
+}
+
+.footer-widgets .widget {
+    float: left;
+    width: 320px;
+    margin: 0 4rem 8rem 4rem;
 }
 
 .widget select {
     max-width: 100%;
+}
+.widget  .search-submit{
+    display: none;
 }
 
 /*--------------------------------------------------------------
@@ -1344,4 +1435,23 @@ object {
 
 .gallery-caption {
     display: block;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer{
+    padding: 2rem;
+    font-family: 'Lato' , sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    background-color: #242729;
+    color: #bbc0c4;
+}
+.site-footer a{
+    color: #848d95;
+    color: hsla(208, 7%, 55%, 1 );
+}
+.site-info{
+    text-align: center;
 }
