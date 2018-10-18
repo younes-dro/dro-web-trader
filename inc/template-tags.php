@@ -22,7 +22,7 @@ if (!function_exists('dro_web_trader_posted_on')) :
 
         $posted_on = sprintf(
                 /* translators: %s: post date. */
-                esc_html_x('Posted on %s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+                esc_html_x('%s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
         echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -38,7 +38,7 @@ if (!function_exists('dro_web_trader_posted_by')) :
     function dro_web_trader_posted_by() {
         $byline = sprintf(
                 /* translators: %s: post author. */
-                esc_html_x('by %s', 'post author', 'dro-web-trader'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+                esc_html_x('Written by %s', 'post author', 'dro-web-trader'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
 
         echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -186,3 +186,55 @@ if (!function_exists('dro_web_trader_search_from')):
     }
 
 endif;
+
+/**
+ * Retrieve  related posts of the same category
+ */
+if (!function_exists('dro_related_posts_cat')):
+
+    function dro_related_posts_cat($content) {
+
+        remove_filter('the_content', __FUNCTION__);
+
+        $id = get_the_ID();
+        $terms = get_the_terms($id, 'category');
+
+        $cats = array();
+        foreach ($terms as $term) {
+            $cats[] = $term->term_id;
+        }
+
+        $loop = new WP_Query(array(
+            'posts_per_page' => 3,
+            'category__in' => $cats,
+            'post__not_in' => array($id),
+            'orderby' => 'rand'
+        ));
+
+        if ($loop->have_posts()) {
+
+            $content .= '<h1>' . __('You may also like', 'dro-web-trader') . ' :</h1>'
+                    . '<ul>';
+
+            while ($loop->have_posts()) {
+                $loop->the_post();
+                if (get_the_excerpt() != '') {
+                    $title = get_the_excerpt();
+                } else {
+                    $title = get_the_title();
+                }
+                $content .='<li>'
+                        . '<a  title="' . $title . '" href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+            }
+            $content .= '</ul>';
+
+            wp_reset_query();
+        }
+        return $content;
+    }
+
+endif;
+
+function test_filter($content) {
+    return $content . '<p>yes</p>';
+}

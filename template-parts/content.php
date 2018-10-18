@@ -10,7 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+
+    <header class="entry-header" style="border: 1px solid #333">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -31,7 +32,7 @@
 
 	<?php dro_web_trader_post_thumbnail(); ?>
 
-	<div class="entry-content">
+        <div class="entry-content" style="border:1px solid #00FF00">
 		<?php
 		the_content( sprintf(
 			wp_kses(
