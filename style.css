@@ -76,10 +76,10 @@ body {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
+/*h1 {
     font-size: 2em;
     margin: 0.67em 0;
-}
+}*/
 
 /* Grouping content
          ========================================================================== */
@@ -413,11 +413,7 @@ h1, h2, h3, h4, h5, h6 {
     -ms-word-break: break-word;
     word-break: break-word;
 }
-h2{
-    font-size: 1.5em;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;  
-}
+
 
 p {
     margin-bottom: 1.5em;
@@ -842,7 +838,7 @@ a:hover, a:active {
         left: 0;
         display: block;
         float: none;
-        background-color: #3333;
+        background-color: #333;
         /*background: #313131;*/
         /*background: hsl(0, 0%, 19%);*/
     }
@@ -1306,16 +1302,10 @@ input[type="search"] {
 
 .entry-title {
     margin: 0 0 2rem;
-    font-weight: 900;
-    font-size: 40px;
-    font-size: 2rem;
-    line-height: 1.3em;
     color: #000;
     color: hsl(0, 0%, 0%);
 }
-.single .entry-title{
-    font-size: 2.5rem;
-}
+
 .entry-content a { 
     text-decoration: underline; 
 }
@@ -1327,35 +1317,6 @@ input[type="search"] {
 .entry-content h5,
 .entry-content h6 { margin-bottom: .4em; }
 
-.entry-content h1 {
-    font-size: 32px;
-    font-size: 3.2rem;
-}
-
-.entry-content h2 {
-    font-size: 30px;
-    font-size: 3.0rem;
-}
-
-.entry-content h3 {
-    font-size: 28px;
-    font-size: 2.8rem;
-}
-
-.entry-content h4 {
-    font-size: 26px;
-    font-size: 2.6rem;
-}
-
-.entry-content h5 {
-    font-size: 24px;
-    font-size: 2.4rem;
-}
-
-.entry-content h6 {
-    font-size: 22px;
-    font-size: 2.2rem;
-}
 
 .entry-content p,
 .entry-content ul,
@@ -1371,41 +1332,7 @@ input[type="search"] {
     line-height: 1.5em;
 }
 /* Smaller fonts for smaller screens */
-@media screen and (max-width: 992px) {
-    .entry-title {
-        font-size: 32px;
-        font-size: 1.5rem;
-        line-height: 1.3em;
-    }
-    .entry-content h1 {
-        font-size: 28px;
-        font-size: 1.5rem;
-    }
-
-    .entry-content h2 {
-        font-size: 26px;
-        font-size: 1rem;
-    }
-
-    .entry-content h3 {
-        font-size: 24px;
-        font-size: .9rem;
-    }
-
-    .entry-content h4 {
-        font-size: 22px;
-        font-size: .8rem;
-    }
-
-    .entry-content h5 {
-        font-size: 20px;
-        font-size: .7rem;
-    }
-
-    .entry-content h6 {
-        font-size: 18px;
-        font-size: .6rem;
-    }
+@media screen and (max-width: 768px) {
 
     .entry-content p,
     .entry-content ul,

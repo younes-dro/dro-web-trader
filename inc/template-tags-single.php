@@ -15,7 +15,7 @@ if (!function_exists('dro_web_trader_cat')):
         $categories_list = get_the_category_list(esc_html__(', ', 'dro-web-trader'));
         if ($categories_list) {
             /* translators: 1: list of categories. */
-            printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'dro-web-trader') . '</span>', $categories_list); // WPCS: XSS OK.
+            printf('<span class="cat-links text-muted">' . esc_html__('Posted in %1$s', 'dro-web-trader') . '</span>', $categories_list); // WPCS: XSS OK.
         }
     }
 
