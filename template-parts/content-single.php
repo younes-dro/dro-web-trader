@@ -7,17 +7,25 @@
  * @package dro_web_trader
  */
 ?>
+<?php
+/**
+ * custom template tags for single post
+ */
+
+require get_template_directory() . '/inc/template-tags-single.php';
+?>
 
 <article  id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
     <div class="col-12">
-        <header class="row justify-content-center  entry-header" style="border: 1px solid #0000FF">
+        <header class="row   entry-header" style="border: 1px solid #0000FF">
+            <h4><?php dro_web_trader_cat();?></h4>
             <?php
             the_title('<h1 class=" col-12 text-center entry-title">', '</h1>');
             ?>
             <div class="col-12 text-center entry-meta">
                 <?php
-                dro_web_trader_posted_on();
                 dro_web_trader_posted_by();
+                dro_web_trader_posted_on();
                 ?>
             </div><!-- .entry-meta -->
         </header><!-- .entry-header -->
@@ -45,8 +53,8 @@
         ?>
     </div><!-- .entry-content -->
 
-    <footer style="background-color:#ccc" class="col-12 entry-footer">
-        <?php dro_web_trader_entry_footer(); ?>
+    <footer  class="col-12 entry-footer">
+        <?php dro_web_trader_post_tags(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 
