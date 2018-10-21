@@ -134,14 +134,20 @@ add_action('widgets_init', 'dro_web_trader_widgets_init');
  */
 function dro_web_trader_scripts() {
 
-    wp_enqueue_style('dro-web-trader-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+    /**
+     * CSS and fonts
+     */
+    wp_enqueue_style('dro-web-trader-bootstrap-css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
 
     wp_enqueue_style('dro-web-trader-style', get_stylesheet_uri());
 
     wp_enqueue_style('dro-web-trader', 'https://fonts.googleapis.com/css?family=Lato:100,400,400i,700,900,900i|PT+Serif:400,400i,700,700i');
 
-    wp_enqueue_style('dro-web-trader-fontawesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
-
+    wp_enqueue_style('dro-web-trader-fontawesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+    
+    /**
+     * JS
+     */
     wp_enqueue_script('dro-web-trader-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20181014', true);
 
     wp_enqueue_script('dro-web-trader-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('dro-web-trader-superfish'), '20181014', true);
