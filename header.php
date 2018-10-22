@@ -55,7 +55,6 @@
                     ?>
                 </nav><!-- #site-navigation -->
 
-
                 <?php if (get_header_image() && ( 'blank' == get_header_textcolor())) : ?>
 
                     <div class="header-image">
@@ -74,7 +73,6 @@
                     echo '<div class="site-branding">';
                 }
                 ?>
-
                 <div class="title-box">
                     <?php
                     the_custom_logo();

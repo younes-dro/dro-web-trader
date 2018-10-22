@@ -25,7 +25,7 @@ if (!function_exists('dro_web_trader_posted_on')) :
                 esc_html_x('%s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
-        echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+        echo '<span class="posted-on">' . __('<i class="fa fa-calendar" aria-hidden="true"></i>', 'dro-web-trader'). $posted_on . '</span>'; // WPCS: XSS OK.
     }
 
 endif;
@@ -38,7 +38,7 @@ if (!function_exists('dro_web_trader_posted_by')) :
     function dro_web_trader_posted_by() {
         $byline = sprintf(
                 /* translators: %s: post author. */
-                esc_html_x('Written by %s', 'post author', 'dro-web-trader'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+                esc_html_x('%s', 'post author', 'dro-web-trader'), '<span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
 
         echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -119,7 +119,7 @@ if (!function_exists('dro_web_trader_post_thumbnail')) :
             ?>
 
             <div class="post-thumbnail">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
             </div><!-- .post-thumbnail -->
 
         <?php else : ?>

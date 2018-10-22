@@ -1216,6 +1216,7 @@ input[type="search"] {
 .widget li ol{
     padding-top: 0;
 }
+
 .widget li li{ margin-left: 1.5em}
 
 .widget_recent_entries li:before,
@@ -1225,19 +1226,23 @@ input[type="search"] {
     float: left;
     padding-top: 2px;
     margin-left: -1.5em;
-    font-family: 'Font Awesome 5 Free';
     font-size: 14px;
     font-weight: 900;
 } 
 
 .widget_recent_entries li,
 .widget_recent_comments li { margin: 0 0 .5em 2.5em; }
-
-.widget_recent_entries li:before { content: "\f036"; }
-
-.widget_recent_comments li:before { content: "\f075"; }
-
 .widget_archive li { margin: 0 0 0 2.5em; }
+
+.site-content li:before,
+.site-footer li:before
+{font-family: fontAwesome;}
+
+.widget_recent_entries li:before { content: "\f036";}
+.widget_recent_comments li:before { content: "\f075"; }
+.widget_archive li:before{content: "\f187"}
+
+
 
 .widget_archive li:before { content: "\f187"; }
 
@@ -1298,14 +1303,29 @@ input[type="search"] {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-
-
+.entry-header{
+    border:1px solid #00F;
+}
+/* Align center the entry header content for Single post */
+.single .entry-header .posted_category, 
+.single .entry-header .entry-title,
+.single .entry-header .entry-meta{
+    text-align: center;
+}
 .entry-title {
     margin: 0 0 2rem;
     color: #000;
     color: hsl(0, 0%, 0%);
 }
+.entry-meta {
+    margin-bottom: 2rem;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-size: .9rem;
+}
 
+.entry-meta a { font-weight: 600; }
 .entry-content a { 
     text-decoration: underline; 
 }
@@ -1327,13 +1347,19 @@ input[type="search"] {
 }
 
 .entry-content blockquote p {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 20px;
+    font-size: 1.5rem;
     line-height: 1.5em;
 }
 /* Smaller fonts for smaller screens */
 @media screen and (max-width: 768px) {
 
+    h1{font-size: 2rem;font-weight: 500;}
+    h2{font-size:1.75rem; font-weight: 500}
+    h3{font-size:1.5rem ; font-weight: 500;}
+    h4{font-size:1.25rem; font-weight: 500;}
+    h5{font-size:1.15rem; font-weight: 500}
+    h6{font-size:1rem; font-weight: 500}
     .entry-content p,
     .entry-content ul,
     .entry-content ol  {
@@ -1364,16 +1390,10 @@ input[type="search"] {
     color: #000;
     color: hsl(0, 0%, 0%);
 }
-
-.entry-meta {
-    margin-bottom: 2rem;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    font-size: 1.4rem;
+.cat-links i{
+    padding: .3rem;
+    color: #ccc;
 }
-
-.entry-meta a { font-weight: 600; }
 
 .entry-footer {
     margin-top: 3rem;
@@ -1400,21 +1420,35 @@ input[type="search"] {
     font-size: 1rem;
 }
 .tags-links .fa{
-    color: #ccc;
+    /*color: #ccc;*/
 }
 
 .entry-footer .tags-links a {
 
     margin-left: .5rem;
     border-radius: 100px;
-    background-color: #313131;
+    /*background-color: #313131;*/
     padding: 5px 10px;
-    color: #fff;
+    color: #313131;
     text-decoration: none;
+    font-family: FontAwesome;
+}
+.tags-links a::before{
+    margin-right: .1rem;
+    content: '\f02b';
 }
 .entry-footer a:hover{
     /*background-color: #fff;*/
     color: #848d95;
+}
+
+/* blockquote */
+blockquote{
+    border-top: 1px solid #bbc0c4;
+    border-bottom: 1px solid #bbc0c4;
+    font-style: italic;
+    padding: 1em 1.5em 0;
+    margin-bottom: 1em;
 }
 
 .sticky {
@@ -1442,7 +1476,20 @@ input[type="search"] {
 }
 
 .posted-on{
-    /*border: 1px solid #FF0000;*/
+    /*   display: inline-block;
+       margin-left: 1rem;*/
+}
+.posted-on i{
+    padding: .3rem;
+    color: #ccc;
+}
+.byline{
+    display: inline-block;
+    margin-right: .5rem;
+}
+.byline i {
+    padding: .3rem;
+    color: #ccc;
 }
 /*--------------------------------------------------------------
 ## Comments
@@ -1515,7 +1562,13 @@ object {
 .wp-caption-text {
     text-align: center;
 }
-
+.wp-caption .wp-caption-text {
+    padding: 0.8075em 1em;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    background: #e5e5e5;
+    background: hsl(0, 0%, 90%);
+}
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/

@@ -17,12 +17,14 @@ require get_template_directory() . '/inc/template-tags-single.php';
 
 <article  id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
     <div class="col-12">
-        <header class="row   entry-header" style="border: 1px solid #0000FF">
-            <h4><?php dro_web_trader_cat();?></h4>
+        <header class="row entry-header">
+            <div class="col-12">
+                <h4 class="posted_category"><?php dro_web_trader_cat();?></h4>
+            </div>
             <?php
-            the_title('<h1 class=" col-12 text-center entry-title">', '</h1>');
+            the_title('<h1 class=" col-12  entry-title">', '</h1>');
             ?>
-            <div class="col-12 text-center entry-meta">
+            <div style="border:1px solid #F00" class="col-12 entry-meta">
                 <?php
                 dro_web_trader_posted_by();
                 dro_web_trader_posted_on();
@@ -30,7 +32,9 @@ require get_template_directory() . '/inc/template-tags-single.php';
             </div><!-- .entry-meta -->
         </header><!-- .entry-header -->
     </div>
+    <div class="col-12">
     <?php dro_web_trader_post_thumbnail(); ?>
+    </div>
 
     <div class="col-12 entry-content" style="border:1px solid #00FF00">
         <?php

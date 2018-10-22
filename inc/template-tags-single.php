@@ -15,9 +15,15 @@ if (!function_exists('dro_web_trader_cat')):
         $categories_list = get_the_category_list(esc_html__(', ', 'dro-web-trader'));
         if ($categories_list) {
             /* translators: 1: list of categories. */
-            printf('<span class="cat-links text-muted">' . esc_html__('Posted in %1$s', 'dro-web-trader') . '</span>', $categories_list); // WPCS: XSS OK.
+            printf('<span class="cat-links text-muted">' 
+                    . wp_kses('<i class="fa fa-folder"></i> %1$s',
+                            array('i' =>
+                                array(
+                                    'class'=>array()
+                                    ))). '</span>', $categories_list); // WPCS: XSS OK.
         }
     }
+//    wp_k
 
 endif;
 
@@ -28,10 +34,10 @@ if (!function_exists('dro_web_trader_post_tags')):
      */
     function dro_web_trader_post_tags() {
         /* translators: used between list items, there is a space after the comma */
-        $tags_list = get_the_tag_list('', esc_html_x(' ', 'list item separator', 'dro-web-trader'));
+        $tags_list = get_the_tag_list('', esc_html_x('', 'list item separator', 'dro-web-trader'));
         if ($tags_list) {
             /* translators: 1: list of tags. */
-            printf('<span class="tags-links"><i class="fa fa-tag"></i>' . esc_html__('Tagged %1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
+            printf('<span class="tags-links row">' . esc_html__('%1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
         }
     }
 
@@ -45,12 +51,17 @@ if (!function_exists('dro_related_posts_cat')):
 
     function dro_related_posts_cat($content) {
 
+        /* Stop the infinite loop */
         remove_filter('the_content', __FUNCTION__);
 
         $id = get_the_ID();
         $terms = get_the_terms($id, 'category');
-
         $cats = array();
+
+        /* case single image gallery */
+        if ($terms === FALSE) {
+            return $content;
+        }
         foreach ($terms as $term) {
             $cats[] = $term->term_id;
         }
@@ -83,11 +94,6 @@ if (!function_exists('dro_related_posts_cat')):
         }
         return $content;
     }
-
-
-
-
-
 
 
 
