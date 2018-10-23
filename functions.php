@@ -42,6 +42,8 @@ if (!function_exists('dro_web_trader_setup')) :
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support('post-thumbnails');
+        add_image_size('large-thumb', 1060, 650, TRUE);
+        add_image_size('index-thum', 780, 250, TRUE);
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
