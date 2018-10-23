@@ -481,6 +481,9 @@ body {
     background: #fff;
     /* Fallback for when there is no custom background color defined. */
 }
+.container-fluid{
+    padding: 1em;
+}
 
 hr {
     background-color: #ccc;
@@ -1003,17 +1006,55 @@ input[type="search"] {
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
     float: left;
-    width: 50%;
+    /* width: 50%; */
+    background-color: #000;
+    padding: .3rem;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
     float: right;
-    text-align: right;
-    width: 50%;
+    background-color: #000;
+    padding: .3rem;
+}
+.comment-navigation .nav-previous a,
+.posts-navigation .nav-previous a,
+.post-navigation .nav-previous a,
+.comment-navigation .nav-next a,
+.posts-navigation .nav-next a,
+.post-navigation .nav-next a{
+    color: #fff;
+}
+@media screen and (max-width: 767px){
+    .comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+        width: 100%; 
+        text-align: center;
+        float: none; 
+    }
+    .comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+        width: 100%;
+        text-align: center;
+        float: none;
+        margin-top: 20px;
+
+    }
+}
+/* New Prev Comments navigation */
+.comment-navigation {
+    padding: 1em 0;
+    margin: 3em 0;
+    border-top: hsl(0, 0%, 80%) solid 1px;
+    border-bottom: hsl(0, 0%, 80%) solid 1px;  
 }
 
+.comment-navigation i {
+    margin: 0 1em;
+}
+/* avatar*/
+.comment-body .comment-author img {
+    border-radius: 50%;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1112,10 +1153,7 @@ input[type="search"] {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-.container-fluid{
-    padding-left: 0;
-    padding-right: 0;
-}
+
 
 .header-image img {
     display: block;
@@ -1456,8 +1494,8 @@ blockquote{
 }
 
 .hentry {
-    margin: 0 0 1.5em;
-    padding: 1em;
+/*    margin: 0 0 1.5em;
+    padding: 1em;*/
 }
 
 .updated:not(.published) {
@@ -1494,12 +1532,71 @@ blockquote{
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-content a {
-    word-wrap: break-word;
+.comments-title {
+    font-weight: 700;
+}
+.comments-area > ol {
+    padding: 0;
+    margin: 2em 0;
+    list-style-type: none;
+}
+ol.children { list-style-type: none; }
+.comment-list ol { margin-left: 50px; }
+.comment-meta { margin-bottom: 1em; }
+.comment-author .avatar {
+    width: 50px;
+    display: block;
+    float: left;
+    margin-right: 20px;
 }
 
-.bypostauthor {
-    display: block;
+.comment-author .fn {
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
+.comment-metadata {
+    
+    font-size:.8rem;
+}
+
+.comment-content { font-size: 90%; }
+
+.comment-content,
+.reply { margin-left: 3rem; }
+.comment-body {
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: solid hsl(0, 0%, 80%) 1px;
+}
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.comment-content ol { margin-left: 1.5em; }
+
+.reply {
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+.bypostauthor > .comment-body {
+    position: relative;
+    padding: 1em;
+    margin-bottom: 2em;
+    background: hsl(0, 0%, 93%);
+    border: none;
+}
+/* Comments responsive */
+@media screen and (max-width:600px) {    
+    .comment-list ol { margin-left: 0; }
+    ol.children{margin-left: 0; padding: 0}
+    
+    .comment-content ol { margin-left: 1.5em; }
+    
+    .comment-content,
+    .reply { margin-left: 0; }
 }
 
 /*--------------------------------------------------------------
@@ -1616,7 +1713,7 @@ object {
 }
 
 .gallery-caption {
-    display: block;
+    display: none;
 }
 
 /*--------------------------------------------------------------

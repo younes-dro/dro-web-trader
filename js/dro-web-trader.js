@@ -56,11 +56,15 @@
             $('.scrollup').fadeOut();
         }
     });
-
     $('.scrollup').click(function () {
         $("html, body").animate({scrollTop: 0}, 600);
         return false;
-    })
+    });
+    
+    /* Gallery caption text */
+    $('.gallery-item').each(function(){
+        $(this).has('figcaption').append('<span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-plus"></i></span>');
+    });
 
 })(jQuery);
 
