@@ -42,13 +42,6 @@ if (post_password_required()) {
             ?>
         </h2><!-- .comments-title -->
 
-        <?php
-        /**
-         * Desable tne comments navigation on the top
-         */
-        //the_comments_navigation(); 
-        ?>
-
         <ol class="comment-list">
             <?php
             wp_list_comments(array(
@@ -65,7 +58,7 @@ if (post_password_required()) {
          */
         require 'inc/template-comments-navigation.php';
         dro_web_trader_comments_navigation();
-//    the_comments_navigation();
+
         // If comments are closed and there are comments, let's leave a little note, shall we?
         if (!comments_open()) :
             ?>
