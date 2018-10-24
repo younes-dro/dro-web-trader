@@ -25,7 +25,7 @@ if (!function_exists('dro_web_trader_posted_on')) :
                 esc_html_x('%s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
-        echo '<span class="posted-on">' . __('<i class="fa fa-calendar" aria-hidden="true"></i>', 'dro-web-trader'). $posted_on . '</span>'; // WPCS: XSS OK.
+        echo '<span class="posted-on">' . __('<i class="fa fa-calendar" aria-hidden="true"></i>', 'dro-web-trader') . $posted_on . '</span>'; // WPCS: XSS OK.
     }
 
 endif;
@@ -66,7 +66,7 @@ if (!function_exists('dro_web_trader_entry_footer')) :
             if ($tags_list) {
                 /* translators: 1: list of tags. */
                 printf('<span class="tags-links"><i class="fa fa-tag"></i>' . esc_html__('Tagged %1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
-            } 
+            }
         }
 
         if (!is_single() && !post_password_required() && ( comments_open() || get_comments_number() )) {
@@ -118,13 +118,14 @@ if (!function_exists('dro_web_trader_post_thumbnail')) :
         if (is_singular()) :
             ?>
 
-            <div class="post-thumbnail">
-                <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
+            <div class="single-post-thumbnail col-12 clear" style="">
+                <?php // the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
+                <?php the_post_thumbnail('large-thumb'); ?>
             </div><!-- .post-thumbnail -->
 
         <?php else : ?>
 
-            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+            <a style="background-color: #006505" class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
                 <?php
                 the_post_thumbnail('post-thumbnail', array(
                     'alt' => the_title_attribute(array(
@@ -184,6 +185,8 @@ if (!function_exists('dro_web_trader_search_from')):
         </div>
         <?php
     }
+
+
 
 endif;
 

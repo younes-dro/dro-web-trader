@@ -55,6 +55,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+/**
+* Issues to resole : the menu desapear when the Identifaint the site is desabled 
+*/
+
+.site-header{
+    background-color: #333;
+}
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -1754,6 +1761,16 @@ object {
 
 .gallery-caption {
     display: none;
+}
+/* Featured Images */
+
+.single-post-thumbnail { 
+    
+}
+
+.single-post-thumbnail img {
+    display: block;
+    margin: 0 auto;
 }
 
 /*--------------------------------------------------------------

@@ -11,7 +11,6 @@
 /**
  * custom template tags for single post
  */
-
 require get_template_directory() . '/inc/template-tags-single.php';
 ?>
 
@@ -19,7 +18,7 @@ require get_template_directory() . '/inc/template-tags-single.php';
     <div class="col-12">
         <header class="row entry-header">
             <div class="col-12">
-                <h4 class="posted_category"><?php dro_web_trader_cat();?></h4>
+                <h4 class="posted_category"><?php dro_web_trader_cat(); ?></h4>
             </div>
             <?php
             the_title('<h1 class=" col-12  entry-title">', '</h1>');
@@ -32,9 +31,13 @@ require get_template_directory() . '/inc/template-tags-single.php';
             </div><!-- .entry-meta -->
         </header><!-- .entry-header -->
     </div>
-    <div class="col-12">
-    <?php dro_web_trader_post_thumbnail(); ?>
-    </div>
+    <?php
+    if (has_post_thumbnail()) {
+
+        dro_web_trader_post_thumbnail();
+    }
+    ?>
+
 
     <div class="col-12 entry-content" style="border:1px solid #00FF00">
         <?php
@@ -49,7 +52,7 @@ require get_template_directory() . '/inc/template-tags-single.php';
                                 )
                         ), get_the_title()
         ));
-        
+
         wp_link_pages(array(
             'before' => '<div class="page-links">' . esc_html__('Pages:', 'dro-web-trader'),
             'after' => '</div>',
