@@ -30,7 +30,11 @@
                 $sticky_header = ($dro_web_trader_sticky_header_status) ? "sticky-active" : "";
                 ?>
                 <nav id="site-navigation" class="main-navigation <?php echo $sticky_header ?>">
-                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
+                    <!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>-->
+                    <div class="mobile-menu-container">
+                        <span class="mobile-menu-icon"><i class="icon-menu"></i></span>
+                    </div>
+                    
                     <?php
                     /**
                      * Main Menu 
@@ -39,6 +43,7 @@
                         wp_nav_menu(array(
                             'theme_location' => 'menu-1',
                             'menu_id' => 'primary-menu',
+                            'menu_class' 	 => 'main-menu',
                         ));
                     }
                     /**
@@ -88,7 +93,7 @@
                     $dro_web_trader_description = get_bloginfo('description', 'display');
                     if ($dro_web_trader_description || is_customize_preview()) :
                         ?>
-                        <p class="site-description"><?php echo $dro_web_trader_description; /* WPCS: xss ok. */ ?></p>
+                        <p class="site-description"><?php esc_html_e( $dro_web_trader_description );  ?></p>
                     <?php endif; ?>
                 </div><!-- .title-box -->
         </div><!-- .site-branding -->
@@ -97,3 +102,5 @@
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
+        <div class="container-fluid">
+            <div class="row">

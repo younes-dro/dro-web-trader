@@ -7,12 +7,6 @@
  * @package dro_web_trader
  */
 ?>
-<?php
-/**
- * custom template tags for single post
- */
-require get_template_directory() . '/inc/template-tags-single.php';
-?>
 
 <article  id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
     <div class="col-12">

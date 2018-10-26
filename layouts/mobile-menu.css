@@ -1,0 +1,126 @@
+/*
+ * Theme Name: dro web trader
+ *
+ *
+ * Learn more: https://developer.wordpress.org/themes/basics/template-files/
+*/
+
+.mobile-menu-container{
+z-index: 999;
+}
+
+
+.mobile-menu-container .mobile-menu{
+    display: none;
+}
+.mobile-menu-icon i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.mobile-menu{
+    height: 100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #193c19;
+    padding: 0;
+    border-bottom: 1px solid #eaeaea;
+    top: 0;
+    overflow-y: auto;        
+}
+.mobile-menu ul li {
+    background-color: #32383e;
+}
+.mobile-menu ul ul {
+    background-color: #32383e;
+}
+.mobile-menu ul ul li{
+    background-color: #32383e;
+}
+.mobile-menu ul ul ul{
+    background-color: #32383e;
+}
+.menu-close{
+    /*border: 1px solid;*/ 
+    width: 45px;
+    height: 45px;
+    /* background: #fff; */
+    text-align: center;
+    color: #F00;
+    font-size: 1.5rem;
+    padding: 5px 0 0 0;
+    margin: 0;
+    cursor: pointer
+}
+.mks-dropdown-toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*border: 1px solid #ff00b2;*/
+    width: 50px;
+    height: 50px;
+    background: #333;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    cursor: pointer;
+}
+body.mks-open{
+    overflow: hidden;
+}
+
+.mobile-menu span.fa{
+    display: table;
+}
+.mobile-menu span.fa::before{
+    display: table-cell;
+    vertical-align: middle;
+}
+#menu-social ul {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    display: block;
+    left: 0;
+}
+#menu-social ul li {
+    float: none;
+}
+@media screen and (max-width: 1200px){
+
+    .search-toggle{
+        position: absolute;
+        right: 0px;
+        top: 0;
+        margin:0;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .mobile-menu-icon{
+        display: block;
+        height: 3.75em;
+        padding: 0 1em;
+        font-weight: normal;
+        font-size: 14px;
+        font-size: .9rem;
+        text-decoration: none;
+        line-height: 3.75em;
+        color: #fff;
+        cursor: pointer;
+        /*border-bottom: 1px solid #fff;*/
+    }
+    .mobile-menu ul ul ul , 
+    .mobile-menu ul ul{
+        box-shadow: none;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .mobile-menu-container{
+        display: none;
+    }
+}

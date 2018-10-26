@@ -125,9 +125,9 @@ if (!function_exists('dro_web_trader_post_thumbnail')) :
 
         <?php else : ?>
 
-            <a style="background-color: #006505" class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+            <a class=" post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
                 <?php
-                the_post_thumbnail('post-thumbnail', array(
+                the_post_thumbnail('index-thumb', array(
                     'alt' => the_title_attribute(array(
                         'echo' => false,
                     )),
@@ -178,11 +178,11 @@ if (!function_exists('dro_web_trader_search_from')):
             <i class="fa fa-search"></i>
             <a href="#search-container" class="screen-reader-text"><?php _e('Search', 'dro-web-trader'); ?></a>
         </div>
-        <div id="search-container" class="search-box-wrapper">
+        
             <div class="search-box">
                 <?php get_search_form() ?>
             </div>
-        </div>
+        
         <?php
     }
 

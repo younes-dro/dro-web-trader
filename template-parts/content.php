@@ -8,55 +8,46 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-    <header class="entry-header" style="border: 1px solid #333">
+<article  id="post-<?php the_ID(); ?>" <?php post_class('post-item'); ?>>
+    <div class="article-inner-wrapper">
         <?php
-        if (is_singular()) :
-            the_title('<h1 class="entry-title">', '</h1>');
-        else :
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif;
-
-        if ('post' === get_post_type()) :
-            ?>
-            <div class="entry-meta">
-                <?php
-                dro_web_trader_posted_on();
-                dro_web_trader_posted_by();
-                ?>
-            </div><!-- .entry-meta -->
-        <?php endif; ?>
-    </header><!-- .entry-header -->
-
-    <?php
-    if (has_post_thumbnail()) {
-        dro_web_trader_post_thumbnail();
-    }
-    ?>
-
-
-    <div class="entry-content" style="border:1px solid #00FF00">
-        <?php
-        the_content(sprintf(
-                        wp_kses(
-                                /* translators: %s: Name of current post. Only visible to screen readers */
-                                __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'dro-web-trader'), array(
-            'span' => array(
-                'class' => array(),
-            ),
-                                )
-                        ), get_the_title()
-        ));
-
-        wp_link_pages(array(
-            'before' => '<div class="page-links">' . esc_html__('Pages:', 'dro-web-trader'),
-            'after' => '</div>',
-        ));
+            if(is_sticky()){
+                echo '<i class="fa fa-thumb-tack post-sticky"></i>';
+            }
         ?>
-    </div><!-- .entry-content -->
+        <header class="entry-header">
+            <?php
+            if (is_singular()) :
+                the_title('<h1 class="entry-title">', '</h1>');
+            else :
+                the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+            endif;
 
-    <footer style="border:1px solid #FF0000" class="entry-footer">
-<?php dro_web_trader_entry_footer(); ?>
-    </footer><!-- .entry-footer -->
+            if ('post' === get_post_type()) :
+                ?>
+                <div class="entry-meta">
+                    <?php
+                    dro_web_trader_posted_on();
+                    dro_web_trader_posted_by();
+                    ?>
+                </div><!-- .entry-meta -->
+            <?php endif; ?>
+        </header><!-- .entry-header -->
+
+        <?php
+        if (has_post_thumbnail()) {
+            dro_web_trader_post_thumbnail();
+        }
+        ?>
+        <div class="entry-content">
+            <?php the_excerpt() ?>
+        </div><!-- .entry-content -->
+
+        <footer class="entry-footer">
+            <div class="continue-reading">
+                <?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'dro-web-trader') . get_the_title() . '" rel="bookmark">Continue Reading<i class="fa fa-arrow-circle-right"></i></a>'; ?>
+            </div>
+        </footer><!-- .entry-footer -->
+
+    </div><!-- .article-inner-wrapper -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -43,7 +43,7 @@ if (!function_exists('dro_web_trader_setup')) :
          */
         add_theme_support('post-thumbnails');
         add_image_size('large-thumb', 1060, 650, TRUE);
-        add_image_size('index-thum', 780, 250, TRUE);
+        add_image_size('index-thumb', 780, 250, TRUE);
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
@@ -137,16 +137,26 @@ add_action('widgets_init', 'dro_web_trader_widgets_init');
 function dro_web_trader_scripts() {
 
     /**
-     * CSS and fonts
+     * CSS 
      */
     wp_enqueue_style('dro-web-trader-bootstrap-css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
 
     wp_enqueue_style('dro-web-trader-style', get_stylesheet_uri());
+    
+    wp_enqueue_style('dro-web-trader-layout-style', get_template_directory_uri().'/layouts/content-sidebar.css');
+    
+    wp_enqueue_style('dro-web-trader-layout-mobile-menu', get_template_directory_uri().'/layouts/mobile-menu.css');
+    
+    /**
+     * Fonts
+     */
 
     wp_enqueue_style('dro-web-trader', 'https://fonts.googleapis.com/css?family=Lato:100,400,400i,700,900,900i|PT+Serif:400,400i,700,700i');
 
     wp_enqueue_style('dro-web-trader-fontawesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
     
+    wp_enqueue_style('dro-web-trader-simple-line-icons', get_template_directory_uri() . '/assets/simple-line-icons/css/simple-line-icons.css');
+
     /**
      * JS
      */
@@ -202,4 +212,8 @@ if (defined('JETPACK__VERSION')) {
 if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/woocommerce.php';
 }
+/**
+ * custom template tags for single post
+ */
+require get_template_directory() . '/inc/template-tags-single.php';
 
