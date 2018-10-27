@@ -62,6 +62,7 @@ if (!function_exists('dro_web_trader_setup')) :
             'gallery',
             'caption',
         ));
+        
 
         // Set up the WordPress core custom background feature.
 //		add_theme_support( 'custom-background', apply_filters( 'dro_web_trader_custom_background_args', array(

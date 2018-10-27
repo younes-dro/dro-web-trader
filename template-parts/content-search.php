@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="article-inner-wrapper">
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -30,6 +31,12 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php dro_web_trader_entry_footer(); ?>
+		<?php 
+                    dro_web_trader_cat();
+                    dro_web_trader_post_tags();
+//                dro_web_trader_entry_footer(); 
+                
+                ?>
 	</footer><!-- .entry-footer -->
+    </div><!-- .articld-inner-wrapper -->
 </article><!-- #post-<?php the_ID(); ?> -->

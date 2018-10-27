@@ -41,11 +41,7 @@ get_header();
 
                 endwhile;
 
-                the_posts_pagination(array(
-                    'prev_text' => '<span class=""><i class="fa fa-arrow-left"></i></span>',
-                    'next_text' => '<span><i class="fa fa-arrow-right"></i></span>'
-                    
-                ));
+                dro_web_trader_posts_pagination();
 
             else :
 

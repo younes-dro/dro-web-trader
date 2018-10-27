@@ -8,7 +8,7 @@
  */
 ?>
 
-<article  id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+<article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="col-12">
         <header class="row entry-header">
             <div class="col-12">

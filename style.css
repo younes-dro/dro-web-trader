@@ -915,7 +915,7 @@ a:hover, a:active {
     float: right;
     text-align: center;
     list-style: none;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, .8);
 }
 .menu-social ul li {
     position: relative;
@@ -1430,6 +1430,17 @@ nav.pagination i{
 .widget  .search-submit{
     display: none;
 }
+/* Make tags cloud tochable*/
+.widget_tag_cloud .tagcloud a{
+    display: inline-block;
+    background-color: #f3efef;
+    padding: 1em;
+    margin: 1px;
+    color: #000;    
+}
+.widget_tag_cloud .tagcloud a:hover{
+    color: #000000;
+}
 /* Footer widgets responsive */
 @media screen and (max-width: 879px) {
     #footer-widgets { width: 100%!important; }
@@ -1781,6 +1792,34 @@ ol.children { list-style-type: none; }
     left: 1.5rem;
     transform: rotateZ(-45deg);
     color: #000000;
+}
+/* Archive style */
+.page-header{
+
+}
+.page-title{
+    background-color: #4d4d4d;
+    color: #fff;
+    padding: 1rem;
+}
+.archive-description{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 0 0 0 1rem;
+    margin: 0 0 1rem 0;
+    display: table;
+    width: 100%;
+}
+.archive-description p{
+    display: table-cell;
+    vertical-align: middle;
+}
+@media screen and (max-width: 768px){
+    .page-title{
+
+        font-size: 16px;
+        font-size: 1rem;
+    }
 }
 /*--------------------------------------------------------------
 # Infinite scroll

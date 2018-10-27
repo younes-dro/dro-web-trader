@@ -22,8 +22,10 @@ if (!function_exists('dro_web_trader_posted_on')) :
 
         $posted_on = sprintf(
                 /* translators: %s: post date. */
-                esc_html_x('%s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
-        );
+//                esc_html_x('%s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+//        );
+                esc_html_x('%s', 'post date', 'dro-web-trader'), $time_string);
+
 
         echo '<span class="posted-on">' . __('<i class="fa fa-calendar" aria-hidden="true"></i>', 'dro-web-trader') . $posted_on . '</span>'; // WPCS: XSS OK.
     }
@@ -62,10 +64,10 @@ if (!function_exists('dro_web_trader_entry_footer')) :
             }
 
             /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'dro-web-trader'));
+            $tags_list = get_the_tag_list('', esc_html_x('', 'list item separator', 'dro-web-trader'));
             if ($tags_list) {
                 /* translators: 1: list of tags. */
-                printf('<span class="tags-links"><i class="fa fa-tag"></i>' . esc_html__('Tagged %1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
+                printf('<span class="tags-links"><i class="fa fa-tag"></i>' . esc_html__('%1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
             }
         }
 
@@ -141,11 +143,27 @@ if (!function_exists('dro_web_trader_post_thumbnail')) :
 
 endif;
 
-/**
- * Optional Social Menu
- */
+
+if (!function_exists('dro_web_trader_posts_pagination')):
+
+    /**
+     * Display Posts pagination Index and Archive pages
+     */
+    function dro_web_trader_posts_pagination() {
+
+        the_posts_pagination(array(
+            'prev_text' => '<span class=""><i class="fa fa-arrow-left"></i></span>',
+            'next_text' => '<span><i class="fa fa-arrow-right"></i></span>'
+        ));
+    }
+
+endif;
+
 if (!function_exists('dro_web_trader_social_menu')):
 
+    /**
+     * display The Social Menu 
+     */
     function dro_web_trader_social_menu() {
         if (has_nav_menu('social')) {
             wp_nav_menu(
@@ -178,13 +196,21 @@ if (!function_exists('dro_web_trader_search_from')):
             <i class="fa fa-search"></i>
             <a href="#search-container" class="screen-reader-text"><?php _e('Search', 'dro-web-trader'); ?></a>
         </div>
-        
-            <div class="search-box">
-                <?php get_search_form() ?>
-            </div>
-        
+
+        <div class="search-box">
+            <?php get_search_form() ?>
+        </div>
+
         <?php
     }
+
+
+
+
+
+
+
+
 
 
 

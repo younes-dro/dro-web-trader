@@ -8,14 +8,14 @@
  */
 ?>
 
-<article  id="post-<?php the_ID(); ?>" <?php post_class('post-item'); ?>>
+<article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="article-inner-wrapper">
-        <?php
-            if(is_sticky()){
+        <header class="entry-header">
+            <?php
+            if (is_sticky() && !is_paged() && is_front_page()) {
                 echo '<i class="fa fa-thumb-tack post-sticky"></i>';
             }
-        ?>
-        <header class="entry-header">
+            ?>
             <?php
             if (is_singular()) :
                 the_title('<h1 class="entry-title">', '</h1>');

@@ -6,7 +6,7 @@
 */
 
 .mobile-menu-container{
-z-index: 999;
+    z-index: 999;
 }
 
 
@@ -83,12 +83,15 @@ body.mks-open{
     position: absolute;
     top: 45px;
     right: 0;
-    display: block;
+    display: inline-block;
     left: 0;
+    width: 50%;
+    margin: 0 auto;
 }
 #menu-social ul li {
     float: none;
 }
+
 @media screen and (max-width: 1200px){
 
     .search-toggle{
@@ -116,6 +119,9 @@ body.mks-open{
     .mobile-menu ul ul ul , 
     .mobile-menu ul ul{
         box-shadow: none;
+    }
+    #menu-social ul{
+        top: 0px;
     }
 }
 
