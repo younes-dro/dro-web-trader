@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-
+<div class="col-lg-9">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -27,7 +27,7 @@ get_header();
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
-					<div class="widget widget_categories">
+                                        <div class="widget widget_categories">
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'dro-web-trader' ); ?></h2>
 						<ul>
 							<?php
@@ -55,6 +55,6 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div><!-- .col-lg-9-->
 <?php
 get_footer();

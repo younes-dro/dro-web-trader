@@ -779,7 +779,7 @@ a:hover, a:active {
     color: white;
     color: hsl(0, 0%, 100%);
 }
-.current-menu-item{
+.main-navigation .current-menu-item{
     background-color: #666;
 }
 
@@ -1815,10 +1815,14 @@ ol.children { list-style-type: none; }
     vertical-align: middle;
 }
 @media screen and (max-width: 768px){
-    .page-title{
 
+    .page-title{
         font-size: 16px;
         font-size: 1rem;
+    }
+    .entry-title{
+        font-size: 18px;
+        font-size: 1.5rem;
     }
 }
 /*--------------------------------------------------------------
