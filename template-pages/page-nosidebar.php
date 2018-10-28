@@ -1,11 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Template Name: Page with no sidebar
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,7 +8,7 @@
  */
 get_header();
 ?>
-<div class="col-lg-9">
+<div class="col-lg-12">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
@@ -33,11 +28,6 @@ get_header();
 
         </main><!-- #main -->
     </div><!-- #primary -->
-</div><!-- .col-lg-9 -->
-<div class="col-lg-3">
-    <?php
-    get_sidebar();
-    ?>
-</div><!-- .col-lg-3 -->
+</div><!-- .col-lg-12 -->
 <?php
 get_footer();

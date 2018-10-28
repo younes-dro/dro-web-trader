@@ -17,7 +17,7 @@
             <?php
             the_title('<h1 class=" col-12  entry-title">', '</h1>');
             ?>
-            <div style="border:1px solid #F00" class="col-12 entry-meta">
+            <div class="col-12 entry-meta">
                 <?php
                 dro_web_trader_posted_by();
                 dro_web_trader_posted_on();
@@ -33,7 +33,7 @@
     ?>
 
 
-    <div class="col-12 entry-content" style="border:1px solid #00FF00">
+    <div class="col-12 entry-content">
         <?php
         add_filter('the_content', 'dro_related_posts_cat');
         the_content(sprintf(

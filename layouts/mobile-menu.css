@@ -80,13 +80,14 @@ body.mks-open{
     vertical-align: middle;
 }
 #menu-social ul {
-    position: absolute;
-    top: 45px;
-    right: 0;
+    /* position: absolute; */
+    /* top: 45px; */
+    /* right: 0; */
     display: inline-block;
-    left: 0;
-    width: 50%;
+    /* left: 0; */
+    width: 100%;
     margin: 0 auto;
+    /* border: 1px solid #0F0; */
 }
 #menu-social ul li {
     float: none;
@@ -119,9 +120,6 @@ body.mks-open{
     .mobile-menu ul ul ul , 
     .mobile-menu ul ul{
         box-shadow: none;
-    }
-    #menu-social ul{
-        top: 0px;
     }
 }
 
