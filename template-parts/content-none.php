@@ -41,7 +41,7 @@
 
 		<?php else : ?>
 
-			<p><?php _e( 'It seems we can’t find what you’re looking for. Perhaps searching can help.', 'dro-web-trader' ); ?></p>
+			<p><?php _e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'dro-web-trader' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
@@ -52,7 +52,7 @@
     if ( is_404() || is_search() ) {
         
         ?>
-    <header class="page-header"><h1 class="page-title"><?php esc_html_e('Most recent posts:', 'dro-web-trader')?></h1></header>
+    <header class="page-header"><h1 class="page-title"><?php esc_html_e('Most recent posts:', 'dro-web-trader' )?></h1></header>
     <?php
         // Get the 6 latest posts
         $args = array(

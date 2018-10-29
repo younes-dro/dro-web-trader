@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: dro-web-trader
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, responsive, white
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -776,7 +776,7 @@ a:hover, a:active {
     font-size: .8rem;
     text-decoration: none;
     line-height: 1.3em;
-    color: white;
+    color: #fff;
     color: hsl(0, 0%, 100%);
 }
 .main-navigation .current-menu-item{

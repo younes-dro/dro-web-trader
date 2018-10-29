@@ -12,7 +12,7 @@
 $dro_web_tradr_scroll_up_status = dro_web_trader_get_option('dro_web_trader_scroll_top_status');
 ?>
 </div><!-- .row -->
-</div><!-- .containier -->
+</div><!-- .container-fluid -->
 
 </div><!-- #content -->
 
@@ -28,7 +28,8 @@ printf(esc_html__('Proudly powered by %s', 'dro-web-trader'), 'WordPress');
         <span class="sep"> | </span>
 <?php
 /* translators: 1: Theme name, 2: Theme author. */
-printf(esc_html__('Theme: %1$s by %2$s.', 'dro-web-trader'), 'dro-web-trader', '<a href="http://www.dro.123.fr">Younes DRO</a>');
+printf(esc_html__('Theme: %1$s by %2$s.', 'dro-web-trader'), 'dro-web-trader', '<a href="'.esc_url(__("http://www.dro.123.fr","dro-web-trader")).'">Younes DRO</a>');
+
 ?>
     </div><!-- .site-info -->
 </footer><!-- #colophon -->
