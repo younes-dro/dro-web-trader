@@ -1360,7 +1360,7 @@ nav.pagination i{
 }
 .widget-title{
     margin-bottom: 1em;
-    font-size: 24px;
+    font-size: 1.4rem;
     border-bottom: 1px solid #000;
 }
 .widget a{
@@ -1428,6 +1428,7 @@ nav.pagination i{
     font-size: 85%;
 }
 
+/* footer Widgets */
 .footer-widgets { margin: 0 auto; }
 
 .footer-widgets .widget-title,
@@ -1462,7 +1463,10 @@ nav.pagination i{
     color: #000000;
 }
 /* Footer widgets responsive */
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 992px) {
+    .widget-title{
+        font-size: 1rem;
+    }
     #footer-widgets { width: 100%!important; }
 
     .footer-widgets .widget {
@@ -1976,7 +1980,7 @@ object {
 # Footer
 --------------------------------------------------------------*/
 .site-footer{
-    padding: 2rem;
+    padding: 1rem;
     font-family: 'Lato' , sans-serif;
     font-size: 16px;
     font-size: 1rem;
@@ -1986,6 +1990,7 @@ object {
 .site-footer a{
     color: #848d95;
     color: hsla(208, 7%, 55%, 1 );
+    
 }
 .site-info{
     text-align: center;
