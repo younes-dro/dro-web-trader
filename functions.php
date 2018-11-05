@@ -161,7 +161,7 @@ function dro_web_trader_scripts() {
     /**
      * JS
      */
-    wp_enqueue_script('dro-web-trader-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20181014', true);
+    wp_enqueue_script('dro-web-trader-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), '20181014', true);
 
     wp_enqueue_script('dro-web-trader-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('dro-web-trader-superfish'), '20181014', true);
 
