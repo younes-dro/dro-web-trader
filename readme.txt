@@ -1,19 +1,16 @@
 === dro web trader ===
-
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
+Contributors: dro.123.fr
 Requires at least: 4.5
 Tested up to: 4.8
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
-License URI: LICENSE
-
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 A starter theme called dro web trader.
 
 == Description ==
 
-make your shop online
+        simple theme to display any type of content
 
 == Installation ==
 
@@ -21,16 +18,39 @@ make your shop online
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
+== Copyright ==
 
-= Does this theme support any plugins? =
+Dro Web Trader  WordPress Theme, Copyright 2018 Younes DRO
+It is distributed under the terms of the GNU GPL
 
-dro web trader includes support for Infinite Scroll in Jetpack.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-== Changelog ==
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
-= 1.0 - May 12 2015 =
-* Initial release
+dro-web-trader bundles the following third-party resources:
+
+Bootstrap, Copyright 2011-2018 Twitter
+License: MIT
+Source: https://getbootstrap.com/
+
+Font Awesome icons, Copyright Dave Gandy
+Icons License: CC BY 4.0 
+Fonts License: SIL OFL 1.1 
+Source: http://fontawesome.io/
+
+Simple Line Icons, Copyright (c) 2016 Sabbir Ahmed & All Contributors
+License : MIT
+Source  : http://simplelineicons.com/
+
+jQuery Superfish Menu Plugin - v1.7.9, Copyright (c) 2016 Joel Birch
+License : MIT
+Source: https://superfish.joelbirch.co/
+
+Initial realease
+*initial release 1.0.0
 
 == Credits ==
 
