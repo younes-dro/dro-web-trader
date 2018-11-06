@@ -51,8 +51,6 @@
             $("body").removeClass('mks-open');
             $(".mobile-menu").removeAttr("style");
         }
-//            $(".mobile-menu").slideUp();
-
     });
 
 
@@ -76,14 +74,7 @@
     /* Top Search Form */
     $(".search-toggle").click(function () {
         $('.search-toggle').toggleClass('active');
-//        alert('ok');
-//        var toggle = $('#site-navigation').hasClass('toggled');
-//        if (toggle === true) {
-//            $('#site-navigation').removeClass('toggled');
-//        }
-//        $('.search-box').toggleClass('search-box-showen','fast');
         $('.search-box').slideToggle('fast');
-//        $firstPara.animate({height: 'toggle'}, 'slow');
         // Optional return false to avoid the page "jumping" when clicked
         return false;
     });

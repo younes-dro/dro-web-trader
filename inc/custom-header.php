@@ -18,10 +18,10 @@
  */
 function dro_web_trader_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'dro_web_trader_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          => get_template_directory_uri().'/assets/images/header.jpg',
 		'default-text-color'     => '000000',
-		'width'                  => 1280,
-		'height'                 => 300,
+		'width'                  => 1200,
+		'height'                 => 900,
 		'flex-height'            => false,
 		'wp-head-callback'       => 'dro_web_trader_header_style',
 	) ) );
