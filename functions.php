@@ -42,8 +42,9 @@ if (!function_exists('dro_web_trader_setup')) :
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support('post-thumbnails');
-        add_image_size('large-thumb', 1060, 650, TRUE);
-        add_image_size('index-thumb', 780, 250, TRUE);
+        add_image_size('dro-web-trader-large', 1060, 650, TRUE);
+        add_image_size('dro-web-trader-index', 780, 250, TRUE);
+        
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
@@ -65,10 +66,10 @@ if (!function_exists('dro_web_trader_setup')) :
         
 
         // Set up the WordPress core custom background feature.
-//		add_theme_support( 'custom-background', apply_filters( 'dro_web_trader_custom_background_args', array(
-//			'default-color' => 'ffffff',
-//			'default-image' => '',
-//		) ) );
+		add_theme_support( 'custom-background', apply_filters( 'dro_web_trader_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
 
@@ -207,12 +208,6 @@ if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
 
-/**
- * Load WooCommerce compatibility file.
- */
-if (class_exists('WooCommerce')) {
-    require get_template_directory() . '/inc/woocommerce.php';
-}
 /**
  * custom template tags for single post
  */

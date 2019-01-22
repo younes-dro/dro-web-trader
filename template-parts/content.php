@@ -45,7 +45,7 @@
 
         <footer class="entry-footer">
             <div class="continue-reading">
-                <?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'dro-web-trader') . get_the_title() . '" rel="bookmark">Continue Reading<i class="fa fa-arrow-circle-right"></i></a>'; ?>
+                <?php echo '<a href="' . esc_url(get_permalink()) . '" title="' . esc_attr__('Continue Reading ', 'dro-web-trader') . get_the_title() . '" rel="bookmark">Continue Reading<i class="fa fa-arrow-circle-right"></i></a>'; ?>
             </div>
         </footer><!-- .entry-footer -->
 

@@ -21,10 +21,8 @@ if (!function_exists('dro_web_trader_posted_on')) :
         );
 
         $posted_on = sprintf(
-                /* translators: %s: post date. */
-//                esc_html_x('%s', 'post date', 'dro-web-trader'), '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
-//        );
-                esc_html_x('%s', 'post date', 'dro-web-trader'), $time_string);
+                
+                '%s', $time_string);
 
 
         echo '<span class="posted-on">' . __('<i class="fa fa-calendar" aria-hidden="true"></i>', 'dro-web-trader') . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -39,8 +37,8 @@ if (!function_exists('dro_web_trader_posted_by')) :
      */
     function dro_web_trader_posted_by() {
         $byline = sprintf(
-                /* translators: %s: post author. */
-                esc_html_x('%s', 'post author', 'dro-web-trader'), '<span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+                
+                '%s', '<span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
 
         echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -60,14 +58,14 @@ if (!function_exists('dro_web_trader_entry_footer')) :
             $categories_list = get_the_category_list(esc_html__(', ', 'dro-web-trader'));
             if ($categories_list) {
                 /* translators: 1: list of categories. */
-                printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'dro-web-trader') . '</span>', $categories_list); // WPCS: XSS OK.
+                printf('<span class="cat-links">' . '%1$s' . '</span>', $categories_list); // WPCS: XSS OK.
             }
 
-            /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list('', esc_html_x('', 'list item separator', 'dro-web-trader'));
+            /* translators: used between list items, space*/
+            $tags_list = get_the_tag_list(' ', esc_html_x(' ', 'list item separator', 'dro-web-trader'));
             if ($tags_list) {
                 /* translators: 1: list of tags. */
-                printf('<span class="tags-links"><i class="fa fa-tag"></i>' . esc_html__('%1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
+                printf('<span class="tags-links"><i class="fa fa-tag"></i>' . '%1$s' . '</span>', $tags_list); // WPCS: XSS OK.
             }
         }
 

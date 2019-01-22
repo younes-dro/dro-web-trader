@@ -1,7 +1,8 @@
 === dro web trader ===
-Contributors: dro.123.fr
+Contributors: vanbom
 Requires at least: 4.5
 Tested up to: 4.8
+Requires PHP: 5.3
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,6 +49,14 @@ Source  : http://simplelineicons.com/
 jQuery Superfish Menu Plugin - v1.7.9, Copyright (c) 2016 Joel Birch
 License : MIT
 Source: https://superfish.joelbirch.co/
+
+All images are under Creative Commons Public Domain deed CC0.
+License: https://pixabay.com/
+Source: https://pixabay.com/en/tajine-colorful-pottery-morocco-1623116/
+
+Dro Web Trader Logo image, Copyright Younes DRO
+License : MIT
+Source: http://dro.123.fr/images/dro-web-trader-logo.png
 
 Initial realease
 *initial release 1.0.0

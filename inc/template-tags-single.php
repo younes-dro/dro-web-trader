@@ -33,11 +33,11 @@ if (!function_exists('dro_web_trader_post_tags')):
      * Display the Tags
      */
     function dro_web_trader_post_tags() {
-        /* translators: used between list items, there is a space after the comma */
-        $tags_list = get_the_tag_list('', esc_html_x('', 'list item separator', 'dro-web-trader'));
+        /* translators: used between list items,  space  */
+        $tags_list = get_the_tag_list(' ', esc_html_x(' ', 'list item separator', 'dro-web-trader'));
         if ($tags_list) {
             /* translators: 1: list of tags. */
-            printf('<span class="tags-links row">' . esc_html__('%1$s', 'dro-web-trader') . '</span>', $tags_list); // WPCS: XSS OK.
+            printf('<span class="tags-links row">' . '%1$s' . '</span>', $tags_list); // WPCS: XSS OK.
         }
     }
 
@@ -86,11 +86,11 @@ if (!function_exists('dro_related_posts_cat')):
                     $title = get_the_title();
                 }
                 $content .='<li>'
-                        . '<a  title="' . $title . '" href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                        . '<a  title="' . $title . '" href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></li>';
             }
             $content .= '</ul>';
 
-            wp_reset_query();
+            wp_reset_postdata();
         }
         return $content;
     }

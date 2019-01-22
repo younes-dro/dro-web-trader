@@ -35,8 +35,8 @@ if (post_password_required()) {
                 );
             } else {
                 printf(// WPCS: XSS OK.
-                        /* translators: 1: comment count number, 2: title. */
-                        esc_html(_nx('One Comment', '%1$s Comments', $dro_web_trader_comment_count, 'comments title', 'dro-web-trader')), number_format_i18n($dro_web_trader_comment_count)
+                        /* translators: comment count number, title. */
+                        esc_html(_nx('%s Comment', '%s Comments', $dro_web_trader_comment_count, 'comments title', 'dro-web-trader')),'One', number_format_i18n($dro_web_trader_comment_count)
                 );
             }
             ?>
@@ -56,7 +56,7 @@ if (post_password_required()) {
         /**
          * Custom comments navigationn function 
          */
-        require 'inc/template-comments-navigation.php';
+        get_template_part('inc/template-comments-navigation');
         dro_web_trader_comments_navigation();
 
         // If comments are closed and there are comments, let's leave a little note, shall we?
