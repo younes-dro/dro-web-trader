@@ -93,7 +93,9 @@
                     $dro_web_trader_description = get_bloginfo('description', 'display');
                     if ($dro_web_trader_description || is_customize_preview()) :
                         ?>
-                        <p class="site-description"><?php esc_html_e( $dro_web_trader_description,'dro-web-trader' );  ?></p>
+                        <p class="site-description">
+                            <?php echo $dro_web_trader_description;  ?>
+                        </p>
                     <?php endif; ?>
                 </div><!-- .title-box -->
         </div><!-- .site-branding -->
