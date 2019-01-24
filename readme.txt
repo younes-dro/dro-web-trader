@@ -50,13 +50,10 @@ jQuery Superfish Menu Plugin - v1.7.9, Copyright (c) 2016 Joel Birch
 License : MIT
 Source: https://superfish.joelbirch.co/
 
-All images are under Creative Commons Public Domain deed CC0.
-License: https://pixabay.com/
-Source: https://pixabay.com/en/tajine-colorful-pottery-morocco-1623116/
-
-Dro Web Trader Logo image, Copyright Younes DRO
+Logo  and Header image , Copyright Younes DRO
 License : MIT
-Source: http://dro.123.fr/images/dro-web-trader-logo.png
+Source: https://github.com/younes-dro/dro-illustration/blob/master/dro-web-trader-logo.png
+Source: https://github.com/younes-dro/dro-illustration/blob/master/moroccan-wedding.jpg
 
 Initial realease
 *initial release 1.0.0

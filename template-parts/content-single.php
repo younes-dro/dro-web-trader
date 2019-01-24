@@ -35,7 +35,7 @@
 
     <div class="col-12 entry-content">
         <?php
-        add_filter('the_content', 'dro_related_posts_cat');
+        add_filter('the_content', 'dro_web_trader_related_posts_cat');
         the_content(sprintf(
                         wp_kses(
                                 /* translators: %s: Name of current post. Only visible to screen readers */

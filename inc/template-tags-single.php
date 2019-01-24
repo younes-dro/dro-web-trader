@@ -47,9 +47,9 @@ endif;
 /**
  * Retrieve  related posts of the same category
  */
-if (!function_exists('dro_related_posts_cat')):
+if (!function_exists('dro_web_trader_related_posts_cat')):
 
-    function dro_related_posts_cat($content) {
+    function dro_web_trader_related_posts_cat($content) {
 
         /* Stop the infinite loop */
         remove_filter('the_content', __FUNCTION__);
