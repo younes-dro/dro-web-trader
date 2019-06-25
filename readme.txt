@@ -1,4 +1,4 @@
-=== dro web trader ===
+# dro web trader
 Contributors: vanbom
 Requires at least: 4.5
 Tested up to: 4.8
@@ -9,17 +9,17 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 A starter theme called dro web trader.
 
-== Description ==
+## Description
 
         simple theme to display any type of content
 
-== Installation ==
+## Installation
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Copyright ==
+## Copyright
 
 Dro Web Trader  WordPress Theme, Copyright 2018 Younes DRO
 It is distributed under the terms of the GNU GPL
@@ -58,7 +58,7 @@ Source: https://github.com/younes-dro/dro-illustration/blob/master/moroccan-wedd
 Initial realease
 *initial release 1.0.0
 
-== Credits ==
+## Credit
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
