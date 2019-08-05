@@ -1,4 +1,4 @@
-=== dro web trader ===
+font=== dro web trader ===
 Contributors: vanbom
 Requires at least: 4.5
 Tested up to: 4.8
