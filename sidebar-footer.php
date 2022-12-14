@@ -1,8 +1,7 @@
-
 <?php
+
 /**
- * The footer sidebar
- *
+ * The footer sidebar.
  */
 
 if ( ! is_active_sidebar( 'sidebar-2' ) ) {
@@ -15,4 +14,3 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
 	</div><!-- #footer-sidebar -->
 </div><!-- #supplementary -->
- 
