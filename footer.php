@@ -9,7 +9,7 @@
  * @package dro_web_trader
  */
 
-$dro_web_tradr_scroll_up_status = dro_web_trader_get_option('dro_web_trader_scroll_top_status');
+$dro_web_tradr_scroll_up_status = dro_web_trader_get_option( 'dro_web_trader_scroll_top_status' );
 ?>
 </div><!-- .row -->
 </div><!-- .container-fluid -->
@@ -17,21 +17,21 @@ $dro_web_tradr_scroll_up_status = dro_web_trader_get_option('dro_web_trader_scro
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer">
-<?php get_sidebar('footer'); ?>
-    <div class="site-info">
-        <a href="<?php echo esc_url(__('https://wordpress.org/', 'dro-web-trader')); ?>">
+<?php get_sidebar( 'footer' ); ?>
+	<div class="site-info">
+		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dro-web-trader' ) ); ?>">
 <?php
 /* translators: %s: CMS name, i.e. WordPress. */
-printf(esc_html__('Proudly powered by %s', 'dro-web-trader'), 'WordPress');
+printf( esc_html__( 'Proudly powered by %s', 'dro-web-trader' ), 'WordPress' );
 ?>
-        </a>
-        <span class="sep"> | </span>
+		</a>
+		<span class="sep"> | </span>
 <?php
 /* translators: 1: Theme name, 2: Theme author. */
-printf(esc_html__('Theme: %1$s by %2$s.', 'dro-web-trader'), 'dro-web-trader', '<a href="'.esc_url(__("http://www.dro.123.fr","dro-web-trader")).'">Younes DRO</a>');
+printf( esc_html__( 'Theme: %1$s by %2$s.', 'dro-web-trader' ), 'dro-web-trader', '<a href="' . esc_url( __( 'http://www.dro.123.fr', 'dro-web-trader' ) ) . '">Younes DRO</a>' );
 
 ?>
-    </div><!-- .site-info -->
+	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
@@ -39,13 +39,13 @@ printf(esc_html__('Theme: %1$s by %2$s.', 'dro-web-trader'), 'dro-web-trader', '
 /**
  * If Scroll To Top is activated
  */
-if ($dro_web_tradr_scroll_up_status):
-    ?>
-    <a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
-    <?php
+if ( $dro_web_tradr_scroll_up_status ) :
+	?>
+	<a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
+	<?php
 endif;
 ?>
-    <?php wp_footer(); ?>
+	<?php wp_footer(); ?>
 
 </body>
 </html>
